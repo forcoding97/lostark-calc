@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Auction.module.css';
+import { createStore } from 'redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
 
 const Auction: NextPage = () => {
   return (
@@ -17,6 +19,11 @@ const Auction: NextPage = () => {
         <button>+ 500</button>
         <button>+ 100</button>
       </div>
+
+      <input
+        placeholder="가격을 입력해주세요."
+        onChange={(event) => console.log(event.target.value)}
+      />
     </div>
   );
 };
