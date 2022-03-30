@@ -1,10 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Auction.module.css';
-import { createStore } from 'redux';
-import { Provider, useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 const Auction: NextPage = () => {
+  const [value, setValue] = useState(0);
+  const [recommend, setRecommend] = useState(0);
+
+  useEffect(() => {
+    setRecommend(Math.round((value * 0.95 - (value * 0.95) / 8) / 1.1));
+  }, [value]);
+
+  const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const numberValue = Number(event.target.value);
+    if (numberValue !== NaN) {
+      setValue(numberValue);
+      console.log(numberValue);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,16 +28,25 @@ const Auction: NextPage = () => {
       </Head>
 
       <div className={styles.button_container}>
-        <button>+ 5000</button>
-        <button>+ 1000</button>
-        <button>+ 500</button>
-        <button>+ 100</button>
+        <button onClick={() => setValue(value + 5000)}>+ 5000</button>
+        <button onClick={() => setValue(value + 1000)}>+ 1000</button>
+        <button onClick={() => setValue(value + 500)}>+ 500</button>
+        <button onClick={() => setValue(value + 100)}>+ 100</button>
+        <button onClick={() => setValue(value + 50)}>+ 50</button>
+        <button onClick={() => setValue(value + 10)}>+ 10</button>
+        <button onClick={() => setValue(0)}>Clear</button>
       </div>
 
-      <input
-        placeholder="가격을 입력해주세요."
-        onChange={(event) => console.log(event.target.value)}
-      />
+      <div>
+        <input
+          type="number"
+          value={value}
+          onChange={(event) => changeValue(event)}
+        />
+      </div>
+
+      {/* <div>{bifurcation}</div> */}
+      <div>{recommend}</div>
     </div>
   );
 };
