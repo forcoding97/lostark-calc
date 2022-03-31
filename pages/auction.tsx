@@ -5,38 +5,41 @@ import React, { useState, useEffect } from 'react';
 
 const Auction: NextPage = () => {
   //경매장 판매가
-  const [value, setValue] = useState(0);
+  const [price, setPrice] = useState(0);
 
-  //손익분기점(Break-Even Point), 이 이상 입찰시 손해
+  //손익분기점(Break-Even Point), 초과 입찰시 손해
   const [bep, setBep] = useState(0);
-  //이익이 많이 남는 입찰가
-  const [benefit, setBenefit] = useState(0);
-  //추천가(이익이 많이 남는 입찰가보다 소폭 높은 가격으로, 다음 입찰자는 손해를 보게 됩니다)
-  const [recommand, setRecommand] = useState(0);
+  //이익(Profit)이 많이 남는 입찰가
+  const [profit, setProfit] = useState(0);
+  //추천가(Recommend, 이익이 많이 남는 입찰가보다 소폭 높은 가격으로, 추가 입찰시 손해)
+  const [rec, setRec] = useState(0);
+
+  //인원수(Headcount)
+  const [hc, setHc] = useState(8);
 
   useEffect(() => {
-    setBep(Math.round(value * 0.95 - (value * 0.95) / 8));
-    setBenefit(Math.round((value * 0.95 - (value * 0.95) / 8) / 1.1));
-    setRecommand(
-      Math.ceil(
-        (value * 0.95 - (value * 0.95) / 8) / 1.1 +
-          Math.round(value * 0.95 - (value * 0.95) / 8) * 0.005,
-      ),
+    //판매 수수료를 제외한 순수익(Net Income)
+    const netIncome = price * 0.95;
+    const breakEvenPoint = netIncome - netIncome / hc;
+    setBep(Math.round(breakEvenPoint));
+    setProfit(Math.round(breakEvenPoint / 1.1));
+    setRec(
+      Math.ceil(breakEvenPoint / 1.1 + Math.round(breakEvenPoint) * 0.005),
     );
-  }, [value]);
+  }, [price, hc]);
 
   const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const numberValue = Number(event.target.value);
     if (numberValue !== NaN) {
-      setValue(numberValue);
+      setPrice(numberValue);
       console.log(numberValue);
     }
   };
 
   const clearValue = () => {
-    setValue(0);
-    setBenefit(0);
-    setRecommand(0);
+    setPrice(0);
+    setProfit(0);
+    setRec(0);
   };
 
   return (
@@ -48,19 +51,23 @@ const Auction: NextPage = () => {
       </Head>
 
       <div>
-        <button>4인</button>
-        <button>8인</button>
-        <button>16인</button>
-        <input type="number" />
+        <button onClick={() => setHc(4)}>4인</button>
+        <button onClick={() => setHc(8)}>8인</button>
+        <button onClick={() => setHc(16)}>16인</button>
+        <input
+          type="number"
+          placeholder="인원수"
+          onChange={(event) => setHc(Number(event.target.value))}
+        />
       </div>
 
       <div className={styles.button_container}>
-        <button onClick={() => setValue(value + 5000)}>+ 5000</button>
-        <button onClick={() => setValue(value + 1000)}>+ 1000</button>
-        <button onClick={() => setValue(value + 500)}>+ 500</button>
-        <button onClick={() => setValue(value + 100)}>+ 100</button>
-        <button onClick={() => setValue(value + 50)}>+ 50</button>
-        <button onClick={() => setValue(value + 10)}>+ 10</button>
+        <button onClick={() => setPrice(price + 5000)}>+ 5000</button>
+        <button onClick={() => setPrice(price + 1000)}>+ 1000</button>
+        <button onClick={() => setPrice(price + 500)}>+ 500</button>
+        <button onClick={() => setPrice(price + 100)}>+ 100</button>
+        <button onClick={() => setPrice(price + 50)}>+ 50</button>
+        <button onClick={() => setPrice(price + 10)}>+ 10</button>
       </div>
 
       <div>
@@ -68,20 +75,18 @@ const Auction: NextPage = () => {
           type="number"
           //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.
           value={
-            String(value) !== '0' ? String(value).replace(/(^0+)/, '') : value
+            String(price) !== '0' ? String(price).replace(/(^0+)/, '') : price
           }
           onChange={(event) => changeValue(event)}
         />
         <button onClick={() => clearValue()}>Clear</button>
       </div>
 
-      <div>{value > 59 || value === 0 ? bep : '입찰하는 것이 손해입니다.'}</div>
+      <div>{price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}</div>
       <div>
-        {value > 59 || value === 0 ? benefit : '입찰하는 것이 손해입니다.'}
+        {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
       </div>
-      <div>
-        {value > 59 || value === 0 ? recommand : '입찰하는 것이 손해입니다.'}
-      </div>
+      <div>{price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}</div>
     </div>
   );
 };
