@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+}
+
+.box {
+  width: 40vw;
+}
+
+.hc_button_container {
+  display: flex;
+  width: 100%;
+}
+
+.hc_button {
+  display: flex;
+  width: 30%;
+}
+
+.hc_input {
+  display: flex;
+  width: 100%;
+}
+
+.value_button_container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.value_button {
+  display: flex;
+  width: 100%;
+}
