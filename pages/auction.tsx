@@ -108,19 +108,22 @@ const Auction: NextPage = () => {
           </button>
         </div>
 
-        <div>
+        <div className={styles.value_container}>
           <input
             type="number"
             //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.
             value={
               String(price) !== '0' ? String(price).replace(/(^0+)/, '') : price
             }
+            className={styles.value_input}
             onChange={(event) => changeValue(event)}
           />
-          <button onClick={() => clearValue()}>Clear</button>
+          <button className={styles.clear} onClick={() => clearValue()}>
+            Clear
+          </button>
         </div>
 
-        <div>
+        <div className={styles.rec_value}>
           {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
         </div>
         <div>
