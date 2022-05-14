@@ -123,13 +123,13 @@ const Auction: NextPage = () => {
           </button>
         </div>
 
-        <div className={styles.rec_value}>
+        <div className={styles.bep_value}>
           {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
         </div>
-        <div>
+        <div className={styles.profit_value}>
           {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
         </div>
-        <div>
+        <div className={styles.rec_value}>
           {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
         </div>
       </div>
