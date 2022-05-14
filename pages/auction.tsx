@@ -122,7 +122,7 @@ const Auction: NextPage = () => {
         </div>
 
         <div className={styles.value_container}>
-          {/* <div className={styles.value_name}>경매장가</div> */}
+          <div className={styles.value_name}>경매장가격</div>
           <input
             type="number"
             //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.

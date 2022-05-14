@@ -112,11 +112,12 @@
 .value_name {
   display: flex;
   color: rgb(250, 250, 250);
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: flex-end;
-  width: 139px;
-  height: 50px;
+  width: 120px;
+  height: 45px;
   padding-left: 3px;
   /* background-color: green; */
 }
@@ -128,9 +129,17 @@
   border-bottom: 2px solid rgb(250, 250, 250);
   color: rgb(250, 250, 250);
   font-size: 25px;
-  width: 500px;
-  padding-bottom: 2px;
+  text-align: end;
+  width: 360px;
   padding-left: 4px;
+  padding-right: 10px;
+  margin-left: 15px;
+}
+
+.value_input::-webkit-outer-spin-button,
+.value_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .clear {
@@ -167,6 +176,7 @@
   width: 120px;
   color: rgb(255, 110, 110);
   font-size: 25px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 3px;
@@ -181,6 +191,7 @@
   justify-content: flex-end;
   color: rgb(255, 110, 110);
   padding-bottom: 10px;
+  padding-right: 5px;
   margin-left: 15px;
 }
 
@@ -196,6 +207,7 @@
   width: 120px;
   color: rgb(255, 165, 95);
   font-size: 25px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 3px;
@@ -210,6 +222,7 @@
   justify-content: flex-end;
   color: rgb(255, 165, 95);
   padding-bottom: 10px;
+  padding-right: 5px;
   margin-left: 15px;
 }
 
@@ -225,6 +238,7 @@
   width: 120px;
   color: rgb(155, 255, 155);
   font-size: 25px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 3px;
@@ -239,4 +253,6 @@
   justify-content: flex-end;
   color: rgb(155, 255, 155);
   margin-left: 15px;
+  padding-right: 5px;
+  padding-bottom: 10px;
 }
