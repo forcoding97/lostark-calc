@@ -14,7 +14,7 @@
 .hc_button_container {
   display: flex;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .hc_button {
@@ -30,7 +30,7 @@
   border-radius: 10px;
   border-width: 3.5px;
   background-color: rgb(250, 250, 250);
-  margin: 0 1px 0px 1px;
+  margin: 0 2px 0px 2px;
 }
 
 .hc_button:hover {
@@ -76,7 +76,7 @@
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .value_button {
@@ -106,6 +106,19 @@
   display: flex;
   width: 100%;
   flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.value_name {
+  display: flex;
+  color: rgb(250, 250, 250);
+  font-size: 30px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 139px;
+  height: 50px;
+  padding-left: 3px;
+  /* background-color: green; */
 }
 
 .value_input {
@@ -114,24 +127,116 @@
   border: none;
   border-bottom: 2px solid rgb(250, 250, 250);
   color: rgb(250, 250, 250);
-  box-sizing: border-box;
-  font-size: 18px;
-  /* padding: 10px 0px; */
+  font-size: 25px;
+  width: 500px;
+  padding-bottom: 2px;
+  padding-left: 4px;
 }
 
 .clear {
   display: flex;
-  width: 100%;
+  width: 200px;
+  height: 50px;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  font-weight: bold;
+  border: solid;
+  border-color: rgb(30, 30, 30);
+  border-radius: 10px;
+  border-width: 3.5px;
+}
+
+.clear:hover {
+  cursor: pointer;
+  transition: 0.23s;
+  color: white;
+  background-color: rgb(30, 30, 30);
 }
 
 .bep_container {
   display: flex;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.bep_name {
+  display: flex;
+  width: 120px;
+  color: rgb(255, 110, 110);
+  font-size: 25px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 3px;
+}
+
+.bep_value {
+  display: flex;
+  width: 565px;
+  border: none;
+  border-bottom: 2px solid rgb(255, 110, 110);
+  font-size: 23px;
+  justify-content: flex-end;
+  color: rgb(255, 110, 110);
+  padding-bottom: 10px;
+  margin-left: 15px;
 }
 
 .profit_container {
   display: flex;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.profit_name {
+  display: flex;
+  width: 120px;
+  color: rgb(255, 165, 95);
+  font-size: 25px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 3px;
+}
+
+.profit_value {
+  display: flex;
+  width: 565px;
+  border: none;
+  border-bottom: 2px solid rgb(255, 165, 95);
+  font-size: 23px;
+  justify-content: flex-end;
+  color: rgb(255, 165, 95);
+  padding-bottom: 10px;
+  margin-left: 15px;
 }
 
 .rec_container {
   display: flex;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.rec_name {
+  display: flex;
+  width: 120px;
+  color: rgb(155, 255, 155);
+  font-size: 25px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 3px;
+}
+
+.rec_value {
+  display: flex;
+  width: 565px;
+  border: none;
+  border-bottom: 2px solid rgb(155, 255, 155);
+  font-size: 23px;
+  justify-content: flex-end;
+  color: rgb(155, 255, 155);
+  margin-left: 15px;
 }

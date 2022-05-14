@@ -122,9 +122,11 @@ const Auction: NextPage = () => {
         </div>
 
         <div className={styles.value_container}>
+          {/* <div className={styles.value_name}>경매장가</div> */}
           <input
             type="number"
             //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.
+            placeholder="경매장 판매가를 입력해주세요."
             value={
               String(price) !== '0' ? String(price).replace(/(^0+)/, '') : price
             }
@@ -132,24 +134,24 @@ const Auction: NextPage = () => {
             onChange={(event) => changeValue(event)}
           />
           <button className={styles.clear} onClick={() => clearValue()}>
-            Clear
+            CLEAR
           </button>
         </div>
 
         <div className={styles.bep_container}>
-          <div>손익분기점</div>
+          <div className={styles.bep_name}>손익분기점</div>
           <div className={styles.bep_value}>
             {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
           </div>
         </div>
         <div className={styles.profit_container}>
-          <div>직전입찰가</div>
+          <div className={styles.profit_name}>직전입찰가</div>
           <div className={styles.profit_value}>
             {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
           </div>
         </div>
         <div className={styles.rec_container}>
-          <div>입찰추천가</div>
+          <div className={styles.rec_name}>입찰추천가</div>
           <div className={styles.rec_value}>
             {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
           </div>
