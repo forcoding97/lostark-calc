@@ -52,20 +52,33 @@ const Auction: NextPage = () => {
         </Head>
 
         <div className={styles.hc_button_container}>
-          <button className={styles.hc_button} onClick={() => setHc(4)}>
-            4인
+          <button
+            className={hc === 4 ? styles.hc_selected_button : styles.hc_button}
+            onClick={() => setHc(4)}
+          >
+            4人
           </button>
-          <button className={styles.hc_button} onClick={() => setHc(8)}>
-            8인
+          <button
+            className={hc === 8 ? styles.hc_selected_button : styles.hc_button}
+            onClick={() => setHc(8)}
+          >
+            8人
           </button>
-          <button className={styles.hc_button} onClick={() => setHc(16)}>
-            16인
+          <button
+            className={hc === 16 ? styles.hc_selected_button : styles.hc_button}
+            onClick={() => setHc(16)}
+          >
+            16人
           </button>
           <input
             type="number"
-            placeholder="인원수"
+            placeholder="인원수 직접입력"
             className={styles.hc_input}
-            onChange={(event) => setHc(Number(event.target.value))}
+            onChange={(event) => {
+              if (event.target.value) {
+                setHc(Number(event.target.value));
+              }
+            }}
           />
         </div>
 
@@ -123,14 +136,23 @@ const Auction: NextPage = () => {
           </button>
         </div>
 
-        <div className={styles.bep_value}>
-          {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
+        <div className={styles.bep_container}>
+          <div>손익분기점</div>
+          <div className={styles.bep_value}>
+            {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
+          </div>
         </div>
-        <div className={styles.profit_value}>
-          {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
+        <div className={styles.profit_container}>
+          <div>직전입찰가</div>
+          <div className={styles.profit_value}>
+            {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
+          </div>
         </div>
-        <div className={styles.rec_value}>
-          {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
+        <div className={styles.rec_container}>
+          <div>입찰추천가</div>
+          <div className={styles.rec_value}>
+            {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
+          </div>
         </div>
       </div>
     </div>
