@@ -32,7 +32,6 @@ const Auction: NextPage = () => {
     const numberValue = Number(event.target.value);
     if (numberValue !== NaN) {
       setPrice(numberValue);
-      console.log(numberValue);
     }
   };
 
@@ -151,7 +150,7 @@ const Auction: NextPage = () => {
           </div>
         </div>
         <div className={styles.rec_container}>
-          <div className={styles.rec_name}>입찰추천가</div>
+          <div className={styles.rec_name}>입찰선점가</div>
           <div className={styles.rec_value}>
             {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
           </div>
