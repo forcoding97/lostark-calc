@@ -118,7 +118,7 @@
   font-family: 'Nanum Gothic', sans-serif;
   justify-content: flex-start;
   align-items: flex-end;
-  width: 120px;
+  width: 130px;
   height: 45px;
   padding-left: 3px;
   margin-right: 19px;
@@ -173,7 +173,7 @@
 
 .bep_name {
   display: flex;
-  width: 120px;
+  width: 130px;
   color: rgb(255, 110, 110);
   font-size: 25px;
   font-family: 'Nanum Gothic', sans-serif;
@@ -184,7 +184,7 @@
 
 .bep_value {
   display: flex;
-  width: 565px;
+  width: 550px;
   border: none;
   border-bottom: 2px solid rgb(255, 110, 110);
   font-size: 23px;
@@ -204,7 +204,7 @@
 
 .profit_name {
   display: flex;
-  width: 120px;
+  width: 130px;
   color: rgb(255, 165, 95);
   font-size: 25px;
   font-family: 'Nanum Gothic', sans-serif;
@@ -215,7 +215,7 @@
 
 .profit_value {
   display: flex;
-  width: 565px;
+  width: 550px;
   border: none;
   border-bottom: 2px solid rgb(255, 165, 95);
   font-size: 23px;
@@ -235,10 +235,10 @@
 
 .rec_name {
   display: flex;
-  width: 120px;
+  width: 130px;
   color: rgb(155, 255, 155);
   font-size: 25px;
-  font-weight: 500;
+  font-family: 'Nanum Gothic', sans-serif;
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 3px;
@@ -246,7 +246,7 @@
 
 .rec_value {
   display: flex;
-  width: 565px;
+  width: 550px;
   border: none;
   border-bottom: 2px solid rgb(155, 255, 155);
   font-size: 23px;
