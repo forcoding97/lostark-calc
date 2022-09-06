@@ -2,6 +2,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Auction.module.css';
 import React, { useState, useEffect } from 'react';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+
+config.autoAddCss = false;
 
 const Auction: NextPage = () => {
   //경매장 판매가
@@ -139,18 +145,30 @@ const Auction: NextPage = () => {
 
         <div className={styles.bep_container}>
           <div className={styles.bep_name}>손익분기점</div>
+          <FontAwesomeIcon
+            icon={faCircleQuestion}
+            className={styles.bep_circle_question_mark}
+          />
           <div className={styles.bep_value}>
             {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
           </div>
         </div>
         <div className={styles.profit_container}>
           <div className={styles.profit_name}>직전입찰가</div>
+          <FontAwesomeIcon
+            icon={faCircleQuestion}
+            className={styles.profit_circle_question_mark}
+          />
           <div className={styles.profit_value}>
             {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
           </div>
         </div>
         <div className={styles.rec_container}>
           <div className={styles.rec_name}>입찰선점가</div>
+          <FontAwesomeIcon
+            icon={faCircleQuestion}
+            className={styles.rec_circle_question_mark}
+          />
           <div className={styles.rec_value}>
             {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
           </div>

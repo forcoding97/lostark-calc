@@ -137,6 +137,7 @@
   border-bottom: 2px solid rgb(250, 250, 250);
   color: rgb(250, 250, 250);
   font-size: 25px;
+  font-family: 'Nanum Gothic', sans-serif;
   text-align: end;
   width: 360px;
   padding-right: 10px;
@@ -184,8 +185,16 @@
   font-size: 25px;
   font-family: 'Nanum Gothic', sans-serif;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   padding-left: 3px;
+}
+
+.bep_circle_question_mark {
+  display: flex;
+  width: 20px;
+  color: rgb(255, 110, 110);
+  margin: auto;
+  padding-top: 6px;
 }
 
 .bep_value {
@@ -196,9 +205,9 @@
   font-size: 23px;
   justify-content: flex-end;
   color: rgb(255, 110, 110);
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   padding-right: 5px;
-  margin-left: 15px;
+  margin-left: 17px;
 }
 
 .profit_container {
@@ -219,6 +228,14 @@
   padding-left: 3px;
 }
 
+.profit_circle_question_mark {
+  display: flex;
+  width: 20px;
+  color: rgb(255, 165, 95);
+  margin: auto;
+  padding-top: 6px;
+}
+
 .profit_value {
   display: flex;
   width: 550px;
@@ -227,9 +244,9 @@
   font-size: 23px;
   justify-content: flex-end;
   color: rgb(255, 165, 95);
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   padding-right: 5px;
-  margin-left: 15px;
+  margin-left: 17px;
 }
 
 .rec_container {
@@ -250,6 +267,14 @@
   padding-left: 3px;
 }
 
+.rec_circle_question_mark {
+  display: flex;
+  width: 20px;
+  color: rgb(155, 255, 155);
+  margin: auto;
+  padding-top: 6px;
+}
+
 .rec_value {
   display: flex;
   width: 550px;
@@ -258,7 +283,7 @@
   font-size: 23px;
   justify-content: flex-end;
   color: rgb(155, 255, 155);
-  margin-left: 15px;
   padding-right: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
+  margin-left: 17px;
 }
