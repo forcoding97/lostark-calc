@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500&display=swap');
 
 .container {
   display: flex;
@@ -24,7 +25,8 @@
   width: 500px;
   height: 55px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: 'Nanum Gothic', sans-serif;
   justify-content: center;
   align-items: center;
   border: solid;
@@ -38,7 +40,8 @@
 .hc_button:hover {
   cursor: pointer;
   transition: 0.23s;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: 'Nanum Gothic', sans-serif;
   border-width: 3.5px;
   color: white;
   border-color: rgb(30, 30, 30);
@@ -49,8 +52,9 @@
   display: flex;
   width: 500px;
   height: 55px;
-  font-size: 19px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Nanum Gothic', sans-serif;
   justify-content: center;
   align-items: center;
   border: solid;
@@ -67,6 +71,7 @@
   width: 500px;
   height: 50px;
   font-size: 16px;
+  font-family: 'Nanum Gothic', sans-serif;
   text-align: center;
   border-radius: 10px;
   border: none;
@@ -87,6 +92,7 @@
   height: 45px;
   font-size: 17px;
   font-weight: bold;
+  font-family: 'Nanum Gothic', sans-serif;
   justify-content: center;
   align-items: center;
   border: solid;
@@ -149,8 +155,8 @@
   margin-left: 20px;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
-  font-weight: bold;
+  font-size: 22px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
   border: solid;
   border-color: rgb(30, 30, 30);
   border-radius: 10px;
