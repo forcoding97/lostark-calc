@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Auction.module.css';
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -85,6 +87,19 @@ const Auction: NextPage = () => {
     setRec(0);
   };
 
+  const notify = () =>
+    toast.info('클립보드에 복사 되었습니다.', {
+      position: 'bottom-center',
+      theme: 'dark',
+      autoClose: 2200,
+      transition: Zoom,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: '',
+    });
+
   return (
     <div className={styles.container}>
       <div className={styles.box}>
@@ -115,6 +130,7 @@ const Auction: NextPage = () => {
           </button>
           <input
             type="number"
+            max="30"
             placeholder="인원수 직접입력"
             className={styles.hc_input}
             onChange={(event) => {
@@ -169,8 +185,8 @@ const Auction: NextPage = () => {
           <div className={styles.value_name}>경매장가격</div>
           <input
             type="number"
-            //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.
             placeholder="경매장 판매가를 입력해주세요."
+            //숫자 앞에 붙은 0 을 삭제합니다. 예를 들어, 023 인 경우 23 을 출력합니다.
             value={
               String(price) !== '0' ? String(price).replace(/(^0+)/, '') : price
             }
@@ -182,31 +198,47 @@ const Auction: NextPage = () => {
           </button>
         </div>
 
-        <div className={styles.bep_container}>
+        <div className={styles.bep_container} onClick={notify}>
           <div className={styles.bep_name}>손익분기점</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
             className={styles.bep_circle_question_mark}
           />
-          <div className={styles.bep_value}>{bepValue}</div>
+          <div
+            className={styles.bep_value}
+            onClick={() => navigator.clipboard.writeText(String(bep))}
+          >
+            {bepValue}
+          </div>
         </div>
-        <div className={styles.profit_container}>
+        <div className={styles.profit_container} onClick={notify}>
           <div className={styles.profit_name}>직전입찰가</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
             className={styles.profit_circle_question_mark}
           />
-          <div className={styles.profit_value}>{profitValue}</div>
+          <div
+            className={styles.profit_value}
+            onClick={() => navigator.clipboard.writeText(String(profit))}
+          >
+            {profitValue}
+          </div>
         </div>
-        <div className={styles.rec_container}>
+        <div className={styles.rec_container} onClick={notify}>
           <div className={styles.rec_name}>입찰선점가</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
             className={styles.rec_circle_question_mark}
           />
-          <div className={styles.rec_value}>{recValue}</div>
+          <div
+            className={styles.rec_value}
+            onClick={() => navigator.clipboard.writeText(String(rec))}
+          >
+            {recValue}
+          </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
