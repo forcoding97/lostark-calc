@@ -10,29 +10,67 @@ import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 config.autoAddCss = false;
 
 const Auction: NextPage = () => {
+  //인원수(Headcount)
+  const [hc, setHc] = useState(8);
+
   //경매장 판매가
   const [price, setPrice] = useState(0);
 
   //손익분기점(Break-Even Point), 초과 입찰시 손해
   const [bep, setBep] = useState(0);
-  //이익(Profit)이 많이 남는 입찰가
+  //손익분기점 직전의 입찰직전가
   const [profit, setProfit] = useState(0);
   //추천가(Recommend, 이익이 많이 남는 입찰가보다 소폭 높은 가격으로, 추가 입찰시 손해)
   const [rec, setRec] = useState(0);
 
-  //인원수(Headcount)
-  const [hc, setHc] = useState(8);
+  //손익분기점
+  const [bepValue, setBepValue] = useState('0');
+  //입찰직전가
+  const [profitValue, setProfitValue] = useState('0');
+  //추천가
+  const [recValue, setRecValue] = useState('0');
 
   useEffect(() => {
-    //판매 수수료를 제외한 순수익(Net Income)
-    const netIncome = price * 0.95;
-    const breakEvenPoint = netIncome - netIncome / hc;
-    setBep(Math.round(breakEvenPoint));
-    setProfit(Math.round(breakEvenPoint / 1.1));
-    setRec(
-      Math.ceil(breakEvenPoint / 1.1 + Math.round(breakEvenPoint) * 0.005),
-    );
+    //인원수가 1명 이하일 경우, 모든 value 를 0으로 초기화
+    if (hc <= 1) {
+      setBep(0);
+      setProfit(0);
+      setRec(0);
+    } else {
+      //판매 수수료를 제외한 순수익(Net Income)
+      const netIncome = price * 0.95;
+      const breakEvenPoint = netIncome - netIncome / hc;
+      setBep(Math.round(breakEvenPoint));
+      setProfit(Math.round(breakEvenPoint / 1.1));
+      setRec(
+        Math.ceil(breakEvenPoint / 1.1 + Math.round(breakEvenPoint) * 0.005),
+      );
+    }
   }, [price, hc]);
+
+  useEffect(() => {
+    if (price === 0) {
+      setBepValue('0');
+      setProfitValue('0');
+      setRecValue('0');
+    } else {
+      if (bep < 50) {
+        setBepValue('입찰하는 것이 손해입니다.');
+      } else {
+        setBepValue(String(bep));
+      }
+      if (profit < 50) {
+        setProfitValue('직전입찰가 입력이 불가능합니다.');
+      } else {
+        setProfitValue(String(profit));
+      }
+      if (rec < 50) {
+        setRecValue('입찰선점가 입력이 불가능합니다.');
+      } else {
+        setRecValue(String(rec));
+      }
+    }
+  }, [bep, profit, rec]);
 
   const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const numberValue = Number(event.target.value);
@@ -80,6 +118,7 @@ const Auction: NextPage = () => {
             placeholder="인원수 직접입력"
             className={styles.hc_input}
             onChange={(event) => {
+              console.log(event.target.value);
               if (event.target.value) {
                 setHc(Number(event.target.value));
               }
@@ -149,9 +188,7 @@ const Auction: NextPage = () => {
             icon={faCircleQuestion}
             className={styles.bep_circle_question_mark}
           />
-          <div className={styles.bep_value}>
-            {price > 59 || price === 0 ? bep : '입찰하는 것이 손해입니다.'}
-          </div>
+          <div className={styles.bep_value}>{bepValue}</div>
         </div>
         <div className={styles.profit_container}>
           <div className={styles.profit_name}>직전입찰가</div>
@@ -159,9 +196,7 @@ const Auction: NextPage = () => {
             icon={faCircleQuestion}
             className={styles.profit_circle_question_mark}
           />
-          <div className={styles.profit_value}>
-            {price > 59 || price === 0 ? profit : '입찰하는 것이 손해입니다.'}
-          </div>
+          <div className={styles.profit_value}>{profitValue}</div>
         </div>
         <div className={styles.rec_container}>
           <div className={styles.rec_name}>입찰선점가</div>
@@ -169,9 +204,7 @@ const Auction: NextPage = () => {
             icon={faCircleQuestion}
             className={styles.rec_circle_question_mark}
           />
-          <div className={styles.rec_value}>
-            {price > 59 || price === 0 ? rec : '입찰하는 것이 손해입니다.'}
-          </div>
+          <div className={styles.rec_value}>{recValue}</div>
         </div>
       </div>
     </div>
