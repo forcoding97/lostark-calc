@@ -96,6 +96,7 @@ const Auction: NextPage = () => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
+      pauseOnFocusLoss: false,
       draggable: true,
       progress: '',
     });
@@ -197,7 +198,7 @@ const Auction: NextPage = () => {
           </button>
         </div>
 
-        <div className={styles.bep_container} onClick={notify}>
+        <div className={styles.bep_container}>
           <div className={styles.bep_name}>손익분기점</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
@@ -205,12 +206,14 @@ const Auction: NextPage = () => {
           />
           <div
             className={styles.bep_value}
-            onClick={() => navigator.clipboard.writeText(String(bep))}
+            onClick={() =>
+              navigator.clipboard.writeText(String(bep)).then(notify)
+            }
           >
-            {bepValue}
+            <span>{bepValue}</span>
           </div>
         </div>
-        <div className={styles.profit_container} onClick={notify}>
+        <div className={styles.profit_container}>
           <div className={styles.profit_name}>직전입찰가</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
@@ -218,12 +221,14 @@ const Auction: NextPage = () => {
           />
           <div
             className={styles.profit_value}
-            onClick={() => navigator.clipboard.writeText(String(profit))}
+            onClick={() =>
+              navigator.clipboard.writeText(String(profit)).then(notify)
+            }
           >
             {profitValue}
           </div>
         </div>
-        <div className={styles.rec_container} onClick={notify}>
+        <div className={styles.rec_container}>
           <div className={styles.rec_name}>입찰선점가</div>
           <FontAwesomeIcon
             icon={faCircleQuestion}
@@ -231,7 +236,9 @@ const Auction: NextPage = () => {
           />
           <div
             className={styles.rec_value}
-            onClick={() => navigator.clipboard.writeText(String(rec))}
+            onClick={() =>
+              navigator.clipboard.writeText(String(rec)).then(notify)
+            }
           >
             {recValue}
           </div>
