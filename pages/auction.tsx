@@ -134,7 +134,6 @@ const Auction: NextPage = () => {
             placeholder="인원수 직접입력"
             className={styles.hc_input}
             onChange={(event) => {
-              console.log(event.target.value);
               if (event.target.value) {
                 setHc(Number(event.target.value));
               }
