@@ -25,11 +25,11 @@ const Auction: NextPage = () => {
   //추천가(Recommend, 이익이 많이 남는 입찰가보다 소폭 높은 가격으로, 추가 입찰시 손해)
   const [rec, setRec] = useState(0);
 
-  //손익분기점
+  //손익분기점 값
   const [bepValue, setBepValue] = useState('0');
-  //입찰직전가
+  //입찰직전가 값
   const [profitValue, setProfitValue] = useState('0');
-  //추천가
+  //추천가 값
   const [recValue, setRecValue] = useState('0');
 
   useEffect(() => {
