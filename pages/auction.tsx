@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 
+//FontAwesome 사용을 위한 코드
 config.autoAddCss = false;
 
 const Auction: NextPage = () => {
