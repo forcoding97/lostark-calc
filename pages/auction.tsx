@@ -9,7 +9,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 
-//FontAwesome 사용을 위한 코드
 config.autoAddCss = false;
 
 const Auction: NextPage = () => {
@@ -45,9 +44,7 @@ const Auction: NextPage = () => {
       const breakEvenPoint = netIncome - netIncome / hc;
       setBep(Math.round(breakEvenPoint));
       setProfit(Math.round(breakEvenPoint / 1.1));
-      setRec(
-        Math.ceil(breakEvenPoint / 1.1 + Math.round(breakEvenPoint) * 0.005),
-      );
+      setRec(Math.ceil(breakEvenPoint / 1.1 / 10) * 10);
     }
   }, [price, hc]);
 
