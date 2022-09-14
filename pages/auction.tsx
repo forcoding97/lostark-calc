@@ -198,10 +198,13 @@ const Auction: NextPage = () => {
 
         <div className={styles.bep_container}>
           <div className={styles.bep_name}>손익분기점</div>
-          <FontAwesomeIcon
-            icon={faCircleQuestion}
-            className={styles.bep_circle_question_mark}
-          />
+          <div className={styles.bep_circle_question_mark}>
+            <FontAwesomeIcon icon={faCircleQuestion} />
+            <div className={styles.bep_balloon}>
+              <span className={styles.bep_explanation}>bep explanation1</span>
+              <span className={styles.bep_explanation}>bep explanation2</span>
+            </div>
+          </div>
           <div
             className={styles.bep_value}
             onClick={() =>
@@ -213,10 +216,10 @@ const Auction: NextPage = () => {
         </div>
         <div className={styles.profit_container}>
           <div className={styles.profit_name}>직전입찰가</div>
-          <FontAwesomeIcon
-            icon={faCircleQuestion}
-            className={styles.profit_circle_question_mark}
-          />
+          <div className={styles.profit_circle_question_mark}>
+            <FontAwesomeIcon icon={faCircleQuestion} />
+            <span className={styles.profit_explanation}>explanation</span>
+          </div>
           <div
             className={styles.profit_value}
             onClick={() =>
@@ -228,10 +231,10 @@ const Auction: NextPage = () => {
         </div>
         <div className={styles.rec_container}>
           <div className={styles.rec_name}>입찰선점가</div>
-          <FontAwesomeIcon
-            icon={faCircleQuestion}
-            className={styles.rec_circle_question_mark}
-          />
+          <div className={styles.rec_circle_question_mark}>
+            <FontAwesomeIcon icon={faCircleQuestion} />
+            <span className={styles.rec_explanation}>explanation</span>
+          </div>
           <div
             className={styles.rec_value}
             onClick={() =>

@@ -191,9 +191,26 @@
 
 .bep_circle_question_mark {
   display: flex;
-  width: 20px;
+  position: relative;
+  width: 10px;
+  height: 15px;
   color: rgb(255, 110, 110);
   margin: auto;
+}
+
+.bep_balloon {
+  visibility: hidden;
+}
+
+.bep_explanation {
+  display: flex;
+  /* position: absolute; */
+  color: white;
+  margin-left: 10px;
+}
+
+.bep_circle_question_mark:hover .bep_balloon {
+  visibility: visible;
 }
 
 .bep_value {
@@ -233,9 +250,20 @@
 
 .profit_circle_question_mark {
   display: flex;
-  width: 20px;
+  width: 10px;
   color: rgb(255, 165, 95);
   margin: auto;
+}
+
+.profit_explanation {
+  visibility: hidden;
+  display: flex;
+  color: white;
+  margin-left: 10px;
+}
+
+.profit_circle_question_mark:hover .profit_explanation {
+  visibility: visible;
 }
 
 .profit_value {
@@ -275,9 +303,20 @@
 
 .rec_circle_question_mark {
   display: flex;
-  width: 20px;
+  width: 10px;
   color: rgb(155, 255, 155);
   margin: auto;
+}
+
+.rec_explanation {
+  visibility: hidden;
+  display: flex;
+  color: white;
+  margin-left: 10px;
+}
+
+.rec_circle_question_mark:hover .rec_explanation {
+  visibility: visible;
 }
 
 .rec_value {
