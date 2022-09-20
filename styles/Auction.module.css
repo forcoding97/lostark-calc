@@ -199,7 +199,7 @@
 }
 
 .bep_balloon {
-  visibility: 1;
+  visibility: hidden;
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -214,6 +214,7 @@
 }
 
 .bep_explanation {
+  visibility: hidden;
   display: flex;
   width: 600px;
   justify-content: center;
