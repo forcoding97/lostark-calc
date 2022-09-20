@@ -199,14 +199,25 @@
 }
 
 .bep_balloon {
-  visibility: hidden;
+  visibility: 1;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-left: 5px;
+  border: solid;
+  border-radius: 12px;
+  border-color: rgb(255, 110, 110);
+  border-width: 3.5px;
 }
 
 .bep_explanation {
   display: flex;
-  /* position: absolute; */
-  color: white;
-  margin-left: 10px;
+  width: 600px;
+  justify-content: center;
+  color: black;
 }
 
 .bep_circle_question_mark:hover .bep_balloon {
