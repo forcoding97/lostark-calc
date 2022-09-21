@@ -44,7 +44,14 @@ const Auction: NextPage = () => {
       const breakEvenPoint = netIncome - netIncome / hc;
       setBep(Math.round(breakEvenPoint));
       setProfit(Math.round(breakEvenPoint / 1.1));
-      setRec(Math.ceil(breakEvenPoint / 1.1 / 10) * 10);
+      if (
+        Math.ceil(breakEvenPoint / 1.1 / 10) * 10 >=
+        Math.round(breakEvenPoint)
+      ) {
+        setRec(Math.round(breakEvenPoint / 1.1) + 1);
+      } else {
+        setRec(Math.ceil(breakEvenPoint / 1.1 / 10) * 10);
+      }
     }
   }, [price, hc]);
 
@@ -201,13 +208,13 @@ const Auction: NextPage = () => {
           <div className={styles.bep_circle_question_mark}>
             <FontAwesomeIcon icon={faCircleQuestion} />
             <div className={styles.bep_balloon}>
-              {/* 손익분기점에 대한 설명 */}
               <span className={styles.bep_explanation}>
                 경매로 보는 이득과 공대 및 파티원들이 받는 분배금이 동일해지는
                 구간입니다.
               </span>
               <span className={styles.bep_explanation}>
-                이 이상 입찰할 경우, 입찰자가 분배금보다 적은 이득을 봅니다.
+                이 이상 입찰할 경우, 입찰자가 분배금보다 적은 이득을 보게
+                됩니다.
               </span>
             </div>
           </div>
@@ -224,7 +231,15 @@ const Auction: NextPage = () => {
           <div className={styles.profit_name}>직전입찰가</div>
           <div className={styles.profit_circle_question_mark}>
             <FontAwesomeIcon icon={faCircleQuestion} />
-            <span className={styles.profit_explanation}>explanation</span>
+            <div className={styles.profit_balloon}>
+              <span className={styles.profit_explanation}>
+                손익분기점에 대한 직전입찰가입니다.
+              </span>
+              <span className={styles.profit_explanation}>
+                이 구간에서 재입찰을 할 경우, 재입찰금은 손익분기점과
+                동일해집니다.
+              </span>
+            </div>
           </div>
           <div
             className={styles.profit_value}
@@ -239,7 +254,15 @@ const Auction: NextPage = () => {
           <div className={styles.rec_name}>입찰선점가</div>
           <div className={styles.rec_circle_question_mark}>
             <FontAwesomeIcon icon={faCircleQuestion} />
-            <span className={styles.rec_explanation}>explanation</span>
+            <div className={styles.rec_balloon}>
+              <span className={styles.rec_explanation}>
+                직전입찰가를 십의 자리까지 올림하여 추천되는 입찰가입니다.
+              </span>
+              <span className={styles.rec_explanation}>
+                이 금액에서 재입찰이 이뤄질 경우, 재입찰자가 얻는 이익이
+                분배금보다 적어집니다.
+              </span>
+            </div>
           </div>
           <div
             className={styles.rec_value}

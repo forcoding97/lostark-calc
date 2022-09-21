@@ -205,23 +205,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 50px;
   margin-left: 5px;
   border: solid;
-  border-radius: 12px;
+  border-radius: 8px;
   border-color: rgb(255, 110, 110);
-  border-width: 3.5px;
+  border-width: 2px;
 }
 
 .bep_explanation {
   visibility: hidden;
   display: flex;
-  width: 600px;
+  width: 470px;
   justify-content: center;
   color: black;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .bep_circle_question_mark:hover .bep_balloon {
+  visibility: visible;
+}
+
+.bep_circle_question_mark:hover .bep_explanation {
   visibility: visible;
 }
 
@@ -262,16 +268,40 @@
 
 .profit_circle_question_mark {
   display: flex;
+  position: relative;
   width: 10px;
+  height: 15px;
   color: rgb(255, 165, 95);
   margin: auto;
+}
+
+.profit_balloon {
+  visibility: hidden;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-left: 5px;
+  border: solid;
+  border-radius: 8px;
+  border-color: rgb(255, 165, 95);
+  border-width: 2px;
 }
 
 .profit_explanation {
   visibility: hidden;
   display: flex;
-  color: white;
-  margin-left: 10px;
+  width: 430px;
+  justify-content: center;
+  color: black;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profit_circle_question_mark:hover .profit_balloon {
+  visibility: visible;
 }
 
 .profit_circle_question_mark:hover .profit_explanation {
@@ -315,16 +345,40 @@
 
 .rec_circle_question_mark {
   display: flex;
+  position: relative;
   width: 10px;
+  height: 15px;
   color: rgb(155, 255, 155);
   margin: auto;
+}
+
+.rec_balloon {
+  visibility: hidden;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-left: 5px;
+  border: solid;
+  border-radius: 8px;
+  border-color: rgb(155, 255, 155);
+  border-width: 2px;
 }
 
 .rec_explanation {
   visibility: hidden;
   display: flex;
-  color: white;
-  margin-left: 10px;
+  width: 500px;
+  justify-content: center;
+  color: black;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rec_circle_question_mark:hover .rec_balloon {
+  visibility: visible;
 }
 
 .rec_circle_question_mark:hover .rec_explanation {
