@@ -206,11 +206,11 @@ const Auction: NextPage = () => {
             <FontAwesomeIcon icon={faCircleQuestion} />
             <div className={styles.bep_balloon}>
               <span className={styles.bep_explanation}>
-                경매로 보는 이득과 공대 및 파티원들이 받는 분배금이 동일해지는
+                경매로 얻는 이익과 공대 및 파티원들이 받는 분배금이 동일해지는
                 구간입니다.
               </span>
               <span className={styles.bep_explanation}>
-                이 이상 입찰할 경우, 입찰자가 분배금보다 적은 이득을 보게
+                이 이상 입찰할 경우, 입찰자가 분배금보다 적은 이익을 얻게
                 됩니다.
               </span>
             </div>
