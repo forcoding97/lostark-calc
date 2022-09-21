@@ -44,11 +44,8 @@ const Auction: NextPage = () => {
       const breakEvenPoint = netIncome - netIncome / hc;
       setBep(Math.round(breakEvenPoint));
       setProfit(Math.round(breakEvenPoint / 1.1));
-      if (
-        Math.ceil(breakEvenPoint / 1.1 / 10) * 10 >=
-        Math.round(breakEvenPoint)
-      ) {
-        setRec(Math.round(breakEvenPoint / 1.1) + 1);
+      if (price < 300) {
+        setRec(Math.round(breakEvenPoint / 1.1) + 2);
       } else {
         setRec(Math.ceil(breakEvenPoint / 1.1 / 10) * 10);
       }
@@ -256,7 +253,7 @@ const Auction: NextPage = () => {
             <FontAwesomeIcon icon={faCircleQuestion} />
             <div className={styles.rec_balloon}>
               <span className={styles.rec_explanation}>
-                직전입찰가를 십의 자리까지 올림하여 추천되는 입찰가입니다.
+                직전입찰가를 기반으로 추천되는 입찰선점가입니다.
               </span>
               <span className={styles.rec_explanation}>
                 이 금액에서 재입찰이 이뤄질 경우, 재입찰자가 얻는 이익이
