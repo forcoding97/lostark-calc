@@ -218,7 +218,7 @@ const Auction: NextPage = () => {
           <div
             className={styles.bep_value}
             onClick={() =>
-              navigator.clipboard.writeText(String(bep)).then(notify)
+              navigator.clipboard.writeText(String(bepValue)).then(notify)
             }
           >
             <span>{bepValue}</span>
@@ -241,7 +241,7 @@ const Auction: NextPage = () => {
           <div
             className={styles.profit_value}
             onClick={() =>
-              navigator.clipboard.writeText(String(profit)).then(notify)
+              navigator.clipboard.writeText(String(profitValue)).then(notify)
             }
           >
             {profitValue}
@@ -264,7 +264,7 @@ const Auction: NextPage = () => {
           <div
             className={styles.rec_value}
             onClick={() =>
-              navigator.clipboard.writeText(String(rec)).then(notify)
+              navigator.clipboard.writeText(String(recValue)).then(notify)
             }
           >
             {recValue}
