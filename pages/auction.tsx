@@ -271,6 +271,9 @@ const Auction: NextPage = () => {
           </div>
         </div>
       </div>
+      <div className={styles.description_box}>
+        <span>hi</span>
+      </div>
       <ToastContainer />
     </div>
   );

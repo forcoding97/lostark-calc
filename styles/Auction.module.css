@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(50, 50, 50);
+  flex-direction: column;
 }
 
 .box {
@@ -400,4 +401,8 @@
 
 .rec_value:hover {
   cursor: pointer;
+}
+
+.description_box {
+  display: flex;
 }
