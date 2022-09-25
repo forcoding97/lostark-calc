@@ -274,7 +274,7 @@ const Auction: NextPage = () => {
       <div className={styles.description_box}>
         <span>사용설명서</span>
         <span>•</span>
-        <span>사용설명서</span>
+        <span></span>
       </div>
       <ToastContainer />
     </div>
