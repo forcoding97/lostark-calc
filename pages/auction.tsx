@@ -281,19 +281,24 @@ const Auction: NextPage = () => {
         </span>
         <span className={styles.description_item}>
           • 인원수는 기본적으로 8명을 기준으로 하며, <br />
+          <span className={styles.description_space}>{'• '}</span>
           인원을 선택하거나 직접 입력하는 방식을 통해 재설정할 수 있습니다.
         </span>
         <span className={styles.description_item}>
           • 경매장가격은 0 을 기준으로 우측에 입력할 시 1의 자리부터, <br />
+          <span className={styles.description_space}>{'• '}</span>
           좌측에 입력할 시 10의 자리부터 입력할 수 있습니다.
         </span>
         <span className={styles.description_item}>
-          • 손익분기점, 직전입찰가, 입찰선점가에 대한 설명은 옆의 ? 마크에
-          커서를 올려 확인할 수 있습니다.
+          • 손익분기점, 직전입찰가, 입찰선점가에 대한 설명은 옆의{' '}
+          <FontAwesomeIcon icon={faCircleQuestion} /> 마크에 커서를 올려 확인할
+          수 있습니다.
         </span>
         <span className={styles.description_item}>
           • 손익분기점, 직전입찰가, 입찰선점가에 해당하는 값을 클릭하면 해당
-          값이 복사되며, <br /> 클립보드에 복사되었다는 알림이 등장합니다.
+          값이 복사되며, <br />
+          <span className={styles.description_space}>{'• '}</span> 클립보드에
+          복사되었다는 알림이 등장합니다.
         </span>
         <span className={styles.description_item}>
           • 입찰하는 것 자체가 손해로 이어질 경우는 계산하지 않습니다.
