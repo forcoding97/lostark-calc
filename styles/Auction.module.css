@@ -406,20 +406,20 @@
 .description_box {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .description_title {
   color: rgb(200, 200, 200);
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   margin-bottom: 7px;
 }
 
 .description_item {
   color: rgb(200, 200, 200);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-top: 7px;
 }
 
