@@ -405,4 +405,20 @@
 
 .description_box {
   display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.description_title {
+  color: rgb(200, 200, 200);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.description_item {
+  color: rgb(200, 200, 200);
+  font-size: 0.9rem;
+  margin-top: 7px;
 }
