@@ -36,6 +36,7 @@
   border-width: 3.5px;
   background-color: rgb(250, 250, 250);
   margin: 0 1px 0px 1px;
+  text-decoration: none;
 }
 
 .hc_button:hover {
