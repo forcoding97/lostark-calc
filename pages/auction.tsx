@@ -74,7 +74,7 @@ const Auction: NextPage = () => {
         setRecValue(String(rec));
       }
     }
-  }, [price]);
+  }, [price, bep, profit, rec]);
 
   const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const numberValue = Number(event.target.value);
