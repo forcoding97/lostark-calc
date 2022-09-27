@@ -1,12 +1,15 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Auction.module.css';
+import styles from '../styles/Ticket.module.css';
 import React, { useState, useEffect } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const Ticket: NextPage = () => {
+  //태양의 회랑 노말, 하드, 헬 & 영겁의 회랑의 보상을 수집
+
+  //각 보상을 2레벨 몇 개로 낸 다음, 최종 토탈로 몇 레벨 보석이 몇 개가 되는지를 보여주는 형식으로
+
+  //useState 를 이번에도 많이 사용하게 될 것 같다
+
   return (
     <div className={styles.container}>
       <div className={styles.box}>
